@@ -28,11 +28,10 @@ public class Atendimento {
 
     private String nomeMedico;
 
-    @JsonSerialize(using = LocalDateTimeSerializer.class)
-    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
-    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
     private LocalDateTime dataAtendimento;
 
+    @NotNull
     @Enumerated(EnumType.STRING)
     private TipoAtendimento tipoAtendimento;
 
