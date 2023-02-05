@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 @RequestMapping("/atendimento")
 @RestController
 public class AtendimentoController {
@@ -17,7 +19,7 @@ public class AtendimentoController {
     private AtendimentoService atendimentoService;
 
     @PostMapping
-    public ResponseEntity<Atendimento> cadastro(@RequestBody Atendimento atendimento){
+    public ResponseEntity<Atendimento> cadastro(@RequestBody @Valid Atendimento atendimento){
         return atendimentoService.save(atendimento);
     }
 }
