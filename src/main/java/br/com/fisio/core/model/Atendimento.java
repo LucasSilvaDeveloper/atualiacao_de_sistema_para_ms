@@ -21,10 +21,13 @@ public class Atendimento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
     private String nomePaciente;
 
+    @NotNull
     private String nomeMedico;
 
+    @NotNull
     @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
     private LocalDateTime dataAtendimento;
 
